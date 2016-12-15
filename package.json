@@ -1,0 +1,31 @@
+{
+  "name": "react_filterable_list",
+  "version": "1.0.0",
+  "description": "- Use React\r - Use NPM\r - Use Webpack\r - Use Babel\r - Use as much **ES6** features as you can\r - Use CSS3 **Flexbox** only for the layout\r - The Design should look like the attached Mockup",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vilina/react_filterable_list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vilina/react_filterable_list/issues"
+  },
+  "homepage": "https://github.com/Vilina/react_filterable_list#readme",
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.14.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server"
+  }
+}
