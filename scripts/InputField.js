@@ -7,17 +7,19 @@ export default class InputField extends Component {
             filterValue: ""
         };
         
-    }
+    };
     
-    handleChange(e) {
-        alert();
-        this.setState({filterValue: e.target.value});
-        alert(this.state.filterValue)
-    }
-    render(){
+    handleChange = (e) => {
+        this.setState({ filterValue: e.target.value }, () => {
+            this.props.onFilterList(this.state.filterValue);
+        });
+         
+    };
+    
+    render() {
         return (
             <div className="input-field-container">
-                <input type="text" className="form-control" id="search_input" onChange={this.handleChange} placeholder="Filter..."/>
+                <input type="text" className="form-control" id="search_input" value={this.state.filterValue} onChange={this.handleChange} placeholder="Filter..."/>
             </div>
         )
     }

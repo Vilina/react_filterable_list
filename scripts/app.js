@@ -9,30 +9,37 @@ export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            countriesList: []
+            alCountriesList: [],
+            filteredCountriesList: []
         };
-        
     }
     
-    getCountries(Countries){
-        console.log(Countries, "Countries");
-        this.setState({countriesList: Countries });
-        
-    }
+    getCountries = (Countries) => {
+        this.setState({alCountriesList: Countries });
+        this.setState({filteredCountriesList: Countries });
+    };
     
-    componentDidMount() {
+    componentDidMount = () => {
         this.getCountries(Countries);
-    }
-    onFilterList() {
-        alert();
-    }
+    };
+    
+    onFilterList = (filterKey) => {
+        let filteredList = [];
+        for (let i = 0; i < this.state.alCountriesList.length; i++) {
+            
+            if (this.state.alCountriesList[i].name.toLowerCase().indexOf(filterKey) > -1) {
+    
+                filteredList.push(this.state.alCountriesList[i]);
+            }
+        }
+        this.setState({filteredCountriesList: filteredList});
+    };
     render() {
-        console.log(this.state.countriesList);
         return (
             <div className="flex-container">
                 <div className="title">Filtered list</div>
                 <InputField onFilterList={filterKey => this.onFilterList(filterKey)}/>
-                <CountriesList  countriesList = {this.state.countriesList}/>
+                <CountriesList  countriesList = {this.state.filteredCountriesList}/>
             </div>
         );
     }
